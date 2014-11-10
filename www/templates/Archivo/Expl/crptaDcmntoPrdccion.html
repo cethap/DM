@@ -1,0 +1,13 @@
+<ion-view title="Documentos">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+  	<div class="wait"></div>
+    <ion-list class="ListMain">
+        <ion-item ng-repeat="D in Documentos" type="item-text-wrap" ng-click="show(D)" hrefll="#/app/DcmntoPrdccion/{{D.CODIGO_SERIE}}/{{D.TPO_CRPTA_CODIGO}}/{{D.CODIGO_CARPETA}}/{{D.CODIGOTIPO}}/{{D.CODIGO}}">
+            <h2> <span class="{{icon}}"></span> <span class="label">{{D.NOMBRE}}</span></h2>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

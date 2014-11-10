@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -25,48 +25,64 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
     .state('app', {
       url: "/app",
-      abstract: true,
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
     })
 
-    .state('app.search', {
-      url: "/search",
+    .state('app.ExplrdorPrdccion', {
+      url: "/ExplrdorPrdccion",
       views: {
         'menuContent' :{
-          templateUrl: "templates/search.html"
+          templateUrl: "templates/Archivo/Expl/series.html",
+          controller: 'ExplrdorPrdccionCtrl',
         }
       }
     })
 
-    .state('app.browse', {
-      url: "/browse",
+    .state('app.SriePrdccion', {
+      url: "/SriePrdccion/:SrieId",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/Archivo/Expl/serieCrptaPrdccion.html",
+          controller: 'SriePrdccionCtrl',
         }
       }
     })
 
-    .state('app.single', {
-      url: "/playlists/:playlistId",
+
+    .state('app.CrptaPrdccion', {
+      url: "/CrptaPrdccion/:SrieId/:TpoCrptaId/:CrptaId",
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
+          templateUrl: "templates/Archivo/Expl/crptaDcmntoPrdccion.html",
+          controller: 'CrptaPrdccionCtrl',
         }
       }
-    });
+    })
+
+
+    .state('app.DcmntoPrdccion', {
+      url: "/DcmntoPrdccion/:SrieId/:TpoCrptaId/:CrptaId/:TpoDcmntoId/:DcmntoId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/Archivo/Expl/DcmntoPrdccion.html",
+          controller: 'DcmntoPrdccionCtrl',
+        }
+      }
+    })
+
+    .state('app.Init', {
+      url: "/init",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/init.html",
+          controller: 'InitCtrl'
+        }
+      }
+    })
+
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/init');
 });
 

@@ -1,0 +1,13 @@
+<ion-view title="Series">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+  	<div class="wait"></div>
+    <ion-list class="ListMain">
+        <ion-item ng-repeat="S in Series" type="item-text-wrap" href="#/app/SriePrdccion/{{S.CODIGO}}">
+            <h2> <span class="{{icon}}"></span> <span class="label">{{S.NOMBRE}}</span></h2>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

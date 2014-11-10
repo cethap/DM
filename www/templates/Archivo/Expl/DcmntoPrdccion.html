@@ -1,0 +1,13 @@
+<ion-view title="Subdocumentos">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+  	<div class="wait"></div>
+    <ion-list class="ListMain">
+        <ion-item ng-repeat="SB in Subdocumentos" type="item-text-wrap" ng-click="show(SB)" hrefll="#/app/DcmntoPrdccion/{{SB.CODIGO_SERIE}}/{{SB.TPO_CRPTA_CODIGO}}/{{SB.CODIGO_CARPETA}}/{{SB.CODIGOTIPO}}/{{SB.CODIGO}}">
+            <h2> <span class="{{icon}}"></span> <span class="label">{{SB.NOMBRE}}</span></h2>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
